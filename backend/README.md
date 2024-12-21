@@ -58,3 +58,10 @@ This is the backend part of the Node.js and React.js application. It is built us
   ```
 
 Make sure to replace the placeholders in the .env file with your actual MongoDB Atlas credentials.
+
+## Testing
+- **Run tests**
+  ```
+  npm test
+  ```
+  

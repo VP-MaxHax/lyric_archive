@@ -1,13 +1,13 @@
 const Song = require('../models/song');
 
 exports.getSongs = async (req, res) => {
-    try {
-      const songs = await Song.find().select('title lyrics');
-      res.json(songs);
-    } catch (err) {
-      res.status(500).json({ message: err.message });
-    }
-  };
+  try {
+    const songs = await Song.find().select('title lyrics');
+    res.json(songs);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
 exports.createSong = async (req, res) => {
   const song = new Song({
@@ -20,5 +20,17 @@ exports.createSong = async (req, res) => {
     res.status(201).json(newSong);
   } catch (err) {
     res.status(400).json({ message: err.message });
+  }
+};
+
+exports.deleteSong = async (req, res) => {
+  try {
+    const song = await Song.findByIdAndDelete(req.params.id);
+    if (!song) {
+      return res.status(404).json({ message: 'Song not found' });
+    }
+    res.json({ message: 'Song deleted' });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
   }
 };

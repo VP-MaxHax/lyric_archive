@@ -8,4 +8,7 @@ router.get('/', songController.getSongs);
 // Create a new song
 router.post('/', songController.createSong);
 
+// Delete a song by ID
+router.delete('/:id', songController.deleteSong);
+
 module.exports = router;
