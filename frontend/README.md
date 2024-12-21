@@ -50,15 +50,15 @@ The backend is built using Node.js and Express. It is located in the `backend` d
    npm start
    ```
 
-### API Endpoints
+## API Endpoints
 
-- The API routes are defined in `src/routes/index.js`.
-- Controllers for handling requests are located in `src/controllers/`.
+Refer to the backend README.md for a list of available API endpoints and their usage.
 
-## Contributing
+## Technologies Used
 
-Feel free to submit issues or pull requests for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License.
+- Node.js
+- React
+- MongoDB
+- Mongoose
+- Express
+- Axios
