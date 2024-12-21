@@ -1,15 +1,17 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const setRoutes = require('./routes/index');
+const connectDB = require('./db');
+const songRoutes = require('./routes/songRoutes');
 
 const app = express();
+
+// Connect to the database
+connectDB();
+
+// Middleware
+app.use(express.json());
+
+// Define routes
+app.use('/api/songs', songRoutes);
+
 const PORT = process.env.PORT || 5000;
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-setRoutes(app);
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
