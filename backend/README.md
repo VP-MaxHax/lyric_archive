@@ -32,6 +32,8 @@ This is the backend part of the Node.js and React.js application. It is built us
 ## API Endpoints
 - **GET /api/songs**: Retrieve a list of songs with only `title` and `lyrics` fields.
 - **POST /api/songs**: Create a new song with `title` and `lyrics`.
+- **GET /api/songs/:id**: Retrieve a song by its ID.
+- **DELETE /api/songs/:id**: Delete a song by its ID.
 
 ## Technologies Used
 - Node.js
@@ -54,7 +56,7 @@ This is the backend part of the Node.js and React.js application. It is built us
   ```
 - **Create a new song**:
   ```
-  curl.exe -X POST http://localhost:5000/api/songs -H "Content-Type: application/json" -d "{\"title\": \"Song Title\", \"lyrics\": \"Liiba Laaba\"}"
+  curl.exe -X POST http://localhost:5000/api/songs -H 'Content-Type: application/json' -d '{\"title\": \"Song Title\", \"lyrics\": \"Liiba Laaba\"}'
   ```
 
 Make sure to replace the placeholders in the .env file with your actual MongoDB Atlas credentials.

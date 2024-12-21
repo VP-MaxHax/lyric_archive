@@ -2,8 +2,20 @@ const Song = require('../models/song');
 
 exports.getSongs = async (req, res) => {
   try {
-    const songs = await Song.find().select('title lyrics');
+    const songs = await Song.find().select('title');
     res.json(songs);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.getSongById = async (req, res) => {
+  try {
+    const song = await Song.findById(req.params.id);
+    if (!song) {
+      return res.status(404).json({ message: 'Song not found' });
+    }
+    res.json(song);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
