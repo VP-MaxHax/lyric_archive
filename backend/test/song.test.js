@@ -1,24 +1,28 @@
 const mongoose = require('mongoose');
 const Song = require('../src/models/song');
+const User = require('../src/models/user');
+const app = require('../src/app');
 require('dotenv').config();
 
-describe('Database Connection', () => {
+describe('Database Tests', () => {
   beforeAll(async () => {
     await mongoose.connect(process.env.MONGODB_TEST, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
+    await new Promise((resolve) => mongoose.connection.once('open', resolve)); // Wait for the connection to be open
   });
 
   afterAll(async () => {
     await mongoose.connection.close();
   });
 
-  test('should connect to the database successfully', () => {
+  test('should connect to the database successfully', async () => {
     const db = mongoose.connection;
     expect(db.readyState).toBe(1);
   });
 
+  // Song tests
   test('should add a new song to the database', async () => {
     const newSong = new Song({
       title: 'Test Song',
