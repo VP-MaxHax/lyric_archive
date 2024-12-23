@@ -10,7 +10,7 @@ describe('Database Tests', () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    await new Promise((resolve) => mongoose.connection.once('open', resolve)); // Wait for the connection to be open
+    await new Promise((resolve) => mongoose.connection.once('open', resolve));
   });
 
   afterAll(async () => {

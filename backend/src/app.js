@@ -1,8 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./db');
 const songRoutes = require('./routes/songRoutes');
 const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 const app = express();
 
@@ -23,6 +25,7 @@ app.use((req, res, next) => {
 // Define routes
 app.use('/api/songs', songRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
 
 module.exports = app;
 

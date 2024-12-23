@@ -35,6 +35,23 @@ exports.createSong = async (req, res) => {
   }
 };
 
+exports.updateSong = async (req, res) => {
+  try {
+    const song = await Song.findById(req.params.id);
+    if (!song) {
+      return res.status(404).json({ message: 'Song not found' });
+    }
+
+    song.title = req.body.title || song.title;
+    song.lyrics = req.body.lyrics || song.lyrics;
+
+    const updatedSong = await song.save();
+    res.json(updatedSong);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
+
 exports.deleteSong = async (req, res) => {
   try {
     const song = await Song.findByIdAndDelete(req.params.id);
