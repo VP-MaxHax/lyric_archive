@@ -1,6 +1,6 @@
 # Lyric_archive
 
-This project is a full-stack application built with Node.js for the backend and React.js for the frontend. Below are the details for setting up and running both parts of the application.
+This project is a full-stack application built with Node.js for the backend and React.js for the frontend. Below are the details for setting up and running frontend of the application.
 
 ## Frontend
 
@@ -53,6 +53,26 @@ The backend is built using Node.js and Express. It is located in the `backend` d
 ## API Endpoints
 
 Refer to the backend README.md for a list of available API endpoints and their usage.
+
+### Features
+- **Home Page**: Displays a list of songs.
+- **Song Detail Page**: Displays details of a     specific song.
+- **User Authentication**: Allows users to register and log in.
+- **Header**: Contains navigation links and login/register functionality.
+- **Footer**: Contains footer content.
+
+### Components
+- **Header**: Displays the navigation bar and handles user login and registration.
+- **Footer**: Displays the footer content.
+- **Modal**: Displays a modal popup for user registration.
+- **RegisterForm**: Contains the form for user registration.
+
+### Context
+- **AuthContext**: Manages user authentication state.
+
+### Pages
+- **HomePage**: Displays a list of songs.
+- **SongDetail**: Displays details of a specific song.
 
 ## Technologies Used
 

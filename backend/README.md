@@ -1,7 +1,13 @@
-# Lyric archive
+# Lyric Archive Backend
 
-## Overview
-This is the backend part of the Node.js and React.js application. It is built using Express and serves as the API for the frontend application.
+This is the backend for the Lyric Archive application. It is built with Node.js, Express, and MongoDB. The backend provides RESTful API endpoints for managing songs and users.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+- MongoDB Atlas account for database hosting.
 
 ## Setup Instructions
 1. Clone the repository:
@@ -20,9 +26,15 @@ This is the backend part of the Node.js and React.js application. It is built us
 - Make sure MongoDB is installed and running on your machine.
 - Create a `.env` file in the `backend` directory with the following content:
   ```
-  MONGODB_URI='mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority&appName=Cluster0'
+  MONGODB_URI='mongodb+srv://<username>:<password>@cluster0.mongodb.net/<production_db>?retryWrites=true&w=majority&appName=Cluster0'
+
+  MONGODB_TEST='mongodb+srv://<username>:<password>@cluster0.mongodb.net/<test_db>?retryWrites=true&w=majority&appName=Cluster0'
+  
+  JWT_SECRET='your_jwt_secret_key'
   ```
-- Replace `<username>`, `<password>`, and `<dbname>` with your actual MongoDB Atlas credentials and database name.
+- Replace `<username>`, `<password>`, `<test_db>` and `<production_db>` with your actual MongoDB Atlas credentials and database name.
+
+- Replace `your_jwt_secret_key` with a secure secret key for JWT.
 
 5. Start the server:
    ```
@@ -47,31 +59,19 @@ This is the backend part of the Node.js and React.js application. It is built us
 - **PUT /api/users/:id**: Updates users data by its ID
 - **DELETE /api/users/:id**: Delete a user by its ID.
 
+### Authentication
+
+- **POST /api/auth/login**: Authenticate a user and return a JWT token.
+- **GET /api/auth/me**: Retrieve the authenticated user's information (requires JWT token).
+
 ## Technologies Used
 - Node.js
 - Express
 - MongoDB
 - Mongoose
-
-## Folder Structure
-- `src/app.js`: Entry point of the application.
-- `src/controllers/songController.js`: Contains the controller logic for songs.
-- `src/routes/songRoutes.js`: Defines the API routes for songs.
-- `src/models/Song.js`: Contains the database model for songs.
-- `src/db.js`: Handles the database connection.
-- `.env`: Environment variables file (not included in the repository).
-
-## Example Requests
-- **Get all songs**:
-  ```
-  curl.exe -X GET http://localhost:5000/api/songs
-  ```
-- **Create a new song**:
-  ```
-  curl.exe -X POST http://localhost:5000/api/songs -H 'Content-Type: application/json' -d '{\"title\": \"Song Title\", \"lyrics\": \"Liiba Laaba\"}'
-  ```
-
-Make sure to replace the placeholders in the .env file with your actual MongoDB Atlas credentials.
+- JWT (JSON Web Token)
+- Jest (for testing)
+- Supertest (for testing)
 
 ## Testing
 - **Run tests**
