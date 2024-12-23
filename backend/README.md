@@ -30,10 +30,22 @@ This is the backend part of the Node.js and React.js application. It is built us
    ```
 
 ## API Endpoints
-- **GET /api/songs**: Retrieve a list of songs with only `title` and `lyrics` fields.
+
+### Song
+
+- **GET /api/songs**: Retrieve a list of songs.
 - **POST /api/songs**: Create a new song with `title` and `lyrics`.
 - **GET /api/songs/:id**: Retrieve a song by its ID.
+- **PUT /api/songs/:id**: Updates song data by its ID
 - **DELETE /api/songs/:id**: Delete a song by its ID.
+
+### User
+
+- **GET /api/users**: Retrieve a list of users.
+- **POST /api/users**: Create a new user with `username` and `password`.
+- **GET /api/users/:id**: Retrieve a user by its ID.
+- **PUT /api/users/:id**: Updates users data by its ID
+- **DELETE /api/users/:id**: Delete a user by its ID.
 
 ## Technologies Used
 - Node.js
