@@ -1,53 +1,30 @@
-# Lyric Archive Frontend
+# Lyric Archive
 
-This is the frontend for the Lyric Archive application. It is built with React and provides a user interface for managing song lyrics.
+## Overview
+Lyric Archive is a full-stack web application designed to provide users with easy access to song lyrics contributed by the community. Built with Node.js, Express, MongoDB, and React, this application allows users to view, add, and manage song lyrics seamlessly. The primary goal of this project is to create a user-friendly platform for sharing and accessing song lyrics. Additionally, it serves as a comprehensive exercise to enhance and demonstrate my full-stack development skills.
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js and npm installed on your machine.
-
-### Setup Instructions
+## Setup Instructions
 
 1. Clone the repository:
    ```
    git clone git@github.com:VP-MaxHax/lyric_archive.git
    ```
 
-2. Install backend dependencies:
-   ```
-   cd backend
-   npm install
-   ```
-
-3. Install frontend dependencies:
-   ```
-   cd frontend
-   npm install
-   ```
-
-### Features
-- **Home Page**: Displays a list of songs.
-- **Song Detail Page**: Displays details of a     specific song.
-- **User Authentication**: Allows users to register and log in.
-- **Header**: Contains navigation links and login/register functionality.
-- **Footer**: Contains footer content.
-
-### Components
-- **Header**: Displays the navigation bar and handles user login and registration.
-- **Footer**: Displays the footer content.
-- **Modal**: Displays a modal popup for user registration.
-- **RegisterForm**: Contains the form for user registration.
-
-### Context
-- **AuthContext**: Manages user authentication state.
-### Pages
-- **HomePage**: Displays a list of songs.
-- **SongDetail**: Displays details of a specific song.
+2. Refer to the README files in the respective backend and frontend directories for specific setup instructions.
 
 ## Technologies Used
 
+### Backend
+
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- JWT (JSON Web Token)
+- Jest (for testing)
+- Supertest (for testing)
+
+### Frontend
 - React
 - React Router
 - Axios (for HTTP requests)
